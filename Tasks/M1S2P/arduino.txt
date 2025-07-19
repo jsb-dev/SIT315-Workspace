@@ -40,18 +40,22 @@ void loop()
 
     // A check for buttonState against its previous state,
     // toggle LED if they're not the same
-    if (buttonState == HIGH && buttonPrevState == LOW)
+    if (buttonState == LOW && buttonPrevState == HIGH) // when released, if previous state was pushed, so single push toggle on button up
     {
         ledState = !ledState;
         digitalWrite(LED_PIN, ledState); // write the inverse of ledState to LED_PIN
-        Serial.print("State change: );
+        Serial.print("LED state change: ");
         Serial.print(ledState);
-        delay(50); // much snappier but still long enough for stability
+        Serial.println("");
+        Serial.print("Btn state change: ");
+        Serial.print(buttonState);
+        Serial.println("");
+        delay(15); // much snappier but still long enough for stability
     }
 
     buttonPrevState = buttonState; // update previous state to reflect current state for next iteration
 
     // Pause code execution for 500 millis after each iteration to prevent rapid toggling,
     // makes it easier to observe in simulation
-    delay(500);
+    // delay(500);
 }

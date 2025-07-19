@@ -47,3 +47,15 @@ The code is designed to toggle an LED on and off when the user presses it, but t
 ### Identify what the main problem in the code is and how it can affect the end-users
 
 An LED that's only lit when a button is held doesn't provide a whole lot of benefit, so I've assumed that this is meant to be a toggle LED for each press. In the code, LED state is toggled for every time the button state is changed. The delay(500) also introduces a lot of latency. This can be subbed for a much smaller bounce delay to ensure distinction between UP/DOWN states without introducing so much latency. The loop logic needs to be reconsidered to make sure the LED is only toggled when pressed down, ignoring the rise.
+
+### Draw three Gantt charts that illustrate the execution of these processes using the following scheduling algorithms: FCFS, Round-Robin, and Preemptive Priority-based scheduling
+
+### For each of the scheduling algorithms, compute the waiting times of each process
+
+### Compute the average waiting time of each scheduling algorithm
+
+### Research and find another scheduling algorithm that has a lower waiting time than these three algorithms
+
+Shortest Remaining Time First (SRTF)
+
+SRTF prioritises workload over arrival time/priority. The scheduler compares remaining burst times for queued processes and preempts when a shorter task arrives. If the new process has lower remaining burst time than the one currently executing, it will be preempted and bumped to execution at the next quantum. This takes a preemptive approach to SJF, so queued processes with lower remaining burst time don't need to wait for the in-progress process to finish executing. This results in shorter overall waiting time than the previous 3 schedulers, at the risk of significantly longer tasks being continuously delayed due to shorter incoming processes. The context switch overhead is also increased due to the increased switching required in scenarios with lots of incoming, short tasks. This results in SRTF juggling between them frequently, requiring regular state-switches. It also relies on the burst time being known, or at least predictable, for each process. The more unpredictability that's introduced to the process queue, the less practical it will be.
