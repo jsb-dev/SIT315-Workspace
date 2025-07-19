@@ -1,8 +1,22 @@
 #include <iostream>
 
-//
-int arraySize = 4;
+// this was the main problem, using a variable name included in the std namespace
+// using namespace std;
+// int size = 4;
 
+// Since the script requires resources from the std namespace, the var name
+// needs to be unique
+
+// I also revisited some best-practise principles that emphasised the inline reference
+// to the namespace to avoid things like namespace pollution and source-ambiguity
+
+// All this in mind, I swapped the using statement for std and attached them inline,
+// using a more descriptive var name that doesn't conflict with std declarations
+
+int arraySize = 4; // holds the collection of user inputs
+
+// Helper function for adding together arrySize entries consecutively,
+// requires prompted input from user for each value via loop
 int sum(int n)
 {
     static int result = 0;
@@ -14,23 +28,23 @@ int sum(int n)
 
 int main()
 {
-    int *p;
+    int *p; // introduced without initialisation, no size determined
     int i = 0;
 
-    p = new int[arraySize];
+    p = new int[arraySize]; // use new to instantitate the pointer with a valid address of arraySize
 
     int total = 0;
 
-    for (i = 0; i < arraySize; i++)
+    for (i = 0; i < arraySize; i++) // loop through the size of input declared globally
     {
         std::cout << "enter number " << i + 1 << ": ";
         std::cin >> p[i];
-        total = sum(p[i]);
+        total = sum(p[i]); // pass the consecutive value to sum() for each entry 1 - n
     }
 
-    delete p;
+    delete p; // clean up to prevent memory leaks
 
-    std::cout << "the final result is " << total;
+    std::cout << "the final result is " << total; // print result
 
     return 0;
 }
