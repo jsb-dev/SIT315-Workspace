@@ -44,3 +44,6 @@ After calling delete p, the memory that was assigned to the array has been clear
 
 The code is designed to toggle an LED on and off when the user presses it, but the behaviour corresponds to the light being toggled only when the user holds their finger down on the button, no toggle. There's also some pretty noticeable latency, so the sleep(500) creates a janky experience. I've added comments to address each stage of the script.
 
+### Identify what the main problem in the code is and how it can affect the end-users
+
+An LED that's only lit when a button is held doesn't provide a whole lot of benefit, so I've assumed that this is meant to be a toggle LED for each press. In the code, LED state is toggled for every time the button state is changed. The delay(500) also introduces a lot of latency. This can be subbed for a much smaller bounce delay to ensure distinction between UP/DOWN states without introducing so much latency. The loop logic needs to be reconsidered to make sure the LED is only toggled when pressed down, ignoring the rise.
