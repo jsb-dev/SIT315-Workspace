@@ -1,16 +1,15 @@
 #include <iostream>
 
-// this was the main problem, using a variable name included in the std namespace
+// This was the main problem, using a variable name included in the std namespace
 // using namespace std;
 // int size = 4;
 
-// Since the script requires resources from the std namespace, the var name
-// needs to be unique
+// the var name needs to be unique
 
 // I also revisited some best-practise principles that emphasised the inline reference
 // to the namespace to avoid things like namespace pollution and source-ambiguity
 
-// All this in mind, I swapped the using statement for std and attached them inline,
+// All this in mind, I swapped the using statement for std inline,
 // using a more descriptive var name that doesn't conflict with std declarations
 
 int arraySize = 4; // holds the collection of user inputs
@@ -42,7 +41,7 @@ int main()
         total = sum(p[i]); // pass the consecutive value to sum() for each entry 1 - n
     }
 
-    delete p; // clean up to prevent memory leaks
+    delete p; // clean up memory
 
     std::cout << "the final result is " << total; // print result
 

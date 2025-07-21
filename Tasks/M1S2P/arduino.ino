@@ -1,6 +1,6 @@
 // The code is designed to toggle an LED on and off when the user presses it,
 // but the simulation behaviour corresponds to the light being toggled only when the user
-// holds their finger down on the button, no toggle. There's also some pretty 
+// holds their finger down on the button, no toggle. There's also some pretty
 // noticeable latency, so the sleep(500) creates a janky experience.
 
 // Here we instaniate constants for pins 2 (I/O interrupt) and 13 (LED)
@@ -15,7 +15,7 @@ uint8_t ledState = LOW;
 // Swtup helper function for configuring the pins to behave as intended
 void setup()
 {
-    // The button interrupt, configuring BTN_PIN with an internal pull-up resistor 
+    // The button interrupt, configuring BTN_PIN with an internal pull-up resistor
     // for reliable HIGH/LOW signal (no external resistor required)
     pinMode(BTN_PIN, INPUT_PULLUP);
     // Configure the LED_PIN to be an output
@@ -40,7 +40,7 @@ void loop()
 
     // A check for buttonState against its previous state,
     // toggle LED if they're not the same
-    if (buttonState == LOW && buttonPrevState == HIGH) // when released, if previous state was pushed, so single push toggle on button up
+    if (buttonState == LOW && buttonPrevState == HIGH) // when pushed, if previous state was not, so single push toggle on button down only
     {
         ledState = !ledState;
         digitalWrite(LED_PIN, ledState); // write the inverse of ledState to LED_PIN

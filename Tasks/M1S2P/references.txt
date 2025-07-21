@@ -1,0 +1,15 @@
+[1] GeeksforGeeks, "Shortest Remaining Time First (Preemptive SJF) Scheduling Algorithm," GeeksforGeeks. [Online]. 
+Available: https://www.geeksforgeeks.org/dsa/shortest-remaining-time-first-preemptive-sjf-scheduling-algorithm/. 
+[Accessed: 19-Jul-2025].
+
+[2] GeeksforGeeks, "Round Robin Scheduling in Operating System," GeeksforGeeks. [Online]. 
+Available: https://www.geeksforgeeks.org/operating-systems/round-robin-scheduling-in-operating-system/. 
+[Accessed: 19-Jul-2025].
+
+[3] GeeksforGeeks, "Preemptive Priority CPU Scheduling Algorithm," GeeksforGeeks. [Online]. 
+Available: https://www.geeksforgeeks.org/operating-systems/preemptive-priority-cpu-scheduling-algortithm/. 
+[Accessed: 19-Jul-2025].
+
+[4] M. Abbas, "Stack vs Heap: What's the difference? " Educative. [Online]. 
+Available: https://www.educative.io/blog/stack-vs-heap. 
+[Accessed: 19-Jul-2025].
