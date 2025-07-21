@@ -16,7 +16,7 @@ uint8_t ledState = LOW;
 void setup()
 {
     // The button interrupt, configuring BTN_PIN with an internal pull-up resistor
-    // for reliable HIGH/LOW signal (no external resistor required)
+    // for reliable HIGH/LOW signal, doesn't need a resistor
     pinMode(BTN_PIN, INPUT_PULLUP);
     // Configure the LED_PIN to be an output
     pinMode(LED_PIN, OUTPUT);

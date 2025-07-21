@@ -7,7 +7,8 @@
 // the var name needs to be unique
 
 // I also revisited some best-practise principles that emphasised the inline reference
-// to the namespace to avoid things like namespace pollution and source-ambiguity
+// to the namespace to avoid things like namespace pollution and source-ambiguity,
+// not strictly necessary but I was won over by the argument
 
 // All this in mind, I swapped the using statement for std inline,
 // using a more descriptive var name that doesn't conflict with std declarations
